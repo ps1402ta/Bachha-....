@@ -1,0 +1,103 @@
+/* --- OVERALL SETUP --- */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Orbitron:wght@500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    background: #050505;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* --- BACKGROUNDS --- */
+.stars-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2; background: radial-gradient(circle at center, #1a0525 0%, #050505 100%);
+}
+
+.star {
+    position: absolute; background: white; border-radius: 50%;
+    animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+/* --- SCREEN LOGIC --- */
+.screen {
+    display: none; position: absolute; width: 100%; height: 100%;
+    flex-direction: column; justify-content: center; align-items: center;
+    padding: 20px; text-align: center;
+}
+.screen.active { display: flex; animation: fadeIn 0.8s ease forwards; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- STEP 2: COUNTDOWN --- */
+.circle-timer {
+    width: 120px; height: 120px; border: 4px solid #ff1493;
+    border-radius: 50%; display: flex; justify-content: center;
+    align-items: center; box-shadow: 0 0 20px #ff1493;
+}
+#count-num { font-family: 'Orbitron'; font-size: 4rem; color: white; }
+
+/* --- STEP 7: INTERACTIVE CAKE --- */
+.cake-box { cursor: pointer; position: relative; width: 200px; height: 150px; }
+.layer { position: absolute; border-radius: 10px; width: 100%; }
+.layer-bottom { height: 50px; background: #ff4d6d; bottom: 0; }
+.layer-middle { height: 40px; background: #ff758f; bottom: 50px; width: 85%; left: 7.5%; }
+.layer-top { height: 35px; background: #ff85a2; bottom: 90px; width: 70%; left: 15%; transition: 0.8s ease; }
+.candle { position: absolute; width: 8px; height: 30px; background: #fff; bottom: 125px; left: 48%; }
+.flame { width: 12px; height: 18px; background: orange; border-radius: 50%; animation: flicker 0.1s infinite; box-shadow: 0 0 10px orange; }
+
+.cake-is-cut #layer-top { transform: translateX(40px) rotate(10deg); }
+.cake-is-cut .flame { opacity: 0; }
+
+/* --- STEP 8: THE GIFT ON TABLE --- */
+.table-container { position: relative; height: 300px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.table { width: 250px; height: 15px; background: #5d4037; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+.gift-box { width: 80px; height: 80px; background: #ff1493; position: relative; margin-bottom: -5px; cursor: pointer; animation: bounce 2s infinite; }
+.gift-lid { position: absolute; width: 90px; height: 20px; background: #ff4081; top: -10px; left: -5px; border-radius: 5px; }
+.gift-ribbon { position: absolute; width: 15px; height: 100%; background: gold; left: 32.5px; }
+
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* --- STEP 9: HEART EXPLOSION OVERLAY --- */
+#heart-explosion-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #000; z-index: 1000; display: none; overflow: hidden;
+}
+#heart-explosion-overlay.show { display: block; }
+
+.exploding-heart {
+    position: absolute; color: #ff1493; font-size: 40px;
+    animation: heartPop 1s ease-out forwards;
+}
+
+@keyframes heartPop { 
+    0% { transform: scale(0) rotate(0); opacity: 1; }
+    100% { transform: scale(2) rotate(360deg); opacity: 0.8; }
+}
+
+.clear-hint {
+    position: absolute; bottom: 30px; width: 100%; text-align: center;
+    color: white; font-weight: bold; z-index: 1001; animation: pulse 1s infinite;
+}
+
+/* --- STEP 11: INFINITE FINALE --- */
+.finale-wrapper { height: 100%; display: flex; flex-direction: column; align-items: center; background: linear-gradient(to bottom, #1a0525, #000); }
+.scrolling-promises { animation: scrollUp 20s linear infinite; margin-top: 50px; }
+@keyframes scrollUp { from { transform: translateY(100vh); } to { transform: translateY(-100%); } }
+
+/* --- UTILS --- */
+.btn-glow {
+    background: linear-gradient(45deg, #ff1493, #9d00ff); color: white;
+    border: none; padding: 12px 30px; border-radius: 50px; font-family: 'Orbitron';
+    cursor: pointer; box-shadow: 0 0 15px #ff1493; margin-top: 20px;
+}
+.hidden { display: none; }
+.neon-text { font-family: 'Dancing Script'; font-size: 2.5rem; text-shadow: 0 0 10px #ff1493; }
+            
