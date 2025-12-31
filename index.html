@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Tara - Shraddha ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="stars-container" id="stars-box"></div>
+    <div class="hearts-wrapper" id="hearts-wrapper"></div>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        
+        <section id="step1" class="screen active">
+            <div class="glass-box">
+                <div class="pulse-glow">🌟</div>
+                <h2 class="neon-text">For Your Eyes Only</h2>
+                <p class="sub-text">Hi Butkiii, ek surprise hai tere liye...</p>
+                <button id="unlock-btn" class="btn-glow">UNLOCK MAGIC ❤️</button>
+            </div>
+        </section>
+
+        <section id="step2" class="screen">
+            <div class="countdown-container">
+                <div class="circle-timer">
+                    <h1 id="count-num">5</h1>
+                </div>
+                <p class="status-msg">Something special is coming...</p>
+            </div>
+        </section>
+
+        <section id="step3" class="screen">
+            <div class="glass-box">
+                <div class="loader-icon">🔋</div>
+                <p>Collecting 1.5 Years of Memories...</p>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="step4" class="screen">
+            <div class="greeting-box">
+                <h1 class="heart-beat">Happy Birthday, Shraddha! ❤️</h1>
+                <p>Today is the day to celebrate YOU.</p>
+                <button class="btn-glow" onclick="nextStep(4)">Start Our Journey 😍</button>
+            </div>
+        </section>
+
+        <section id="step5" class="screen">
+            <div class="memory-box glass-box">
+                <h3 class="box-title">Our Story ⭐</h3>
+                <div id="typewriter-text" class="scrollable-content"></div>
+                <button id="m-next" class="btn-glow hidden" onclick="nextStep(5)">Continue →</button>
+            </div>
+        </section>
+
+        <section id="step6" class="screen">
+            <div class="glass-card scroll-area">
+                <h2 class="neon-text">Infinity Wall 🧿</h2>
+                <div class="info-card">📅 17 June - Jab hum mile the</div>
+                <div class="info-card">🤝 Tera Support - Jab main toota tha</div>
+                <div class="info-card">⌛ 5 Months Wait - True Love</div>
+                <div class="info-card">🧿 Nazar is Real - Humari Belief</div>
+                <button class="btn-glow" onclick="nextStep(6)">Ready for the Cake? 🎂</button>
+            </div>
+        </section>
+
+        <section id="step7" class="screen">
+            <div class="cake-box" id="cake-interactive">
+                <div class="cake">
+                    <div class="layer layer-bottom"></div>
+                    <div class="layer layer-middle"></div>
+                    <div class="layer layer-top" id="cake-slice"></div>
+                    <div class="candle"><div class="flame" id="cake-flame"></div></div>
+                </div>
+            </div>
+            <p id="cake-msg">Tap the cake to make a wish... 🎂</p>
+            <button id="cake-next" class="btn-glow hidden" onclick="nextStep(7)">See Your Gift 🎁</button>
+        </section>
+
+        <section id="step8" class="screen">
+            <div class="table-container">
+                <div class="table"></div>
+                <div class="gift-box" id="gift-interactive">
+                    <div class="gift-lid"></div>
+                    <div class="gift-ribbon"></div>
+                </div>
+            </div>
+            <p class="tap-hint">There is a gift on the table. Tap it! 🎁</p>
+        </section>
+
+        <div id="heart-explosion-overlay" class="hidden-overlay">
+            <div class="clear-hint">Tap anywhere to clear the hearts... ❤️</div>
+        </div>
+
+        <section id="step10" class="screen">
+            <div class="english-wish-box glass-box">
+                <h2 class="wish-title">Happy Birthday Butkiii! 🎂</h2>
+                <p class="wish-p">"You are the most beautiful chapter of my life. I hope your day is as amazing as you are. Thank you for being my constant. ❤️"</p>
+                <button class="btn-glow" onclick="nextStep(10)">Final Promise 💍</button>
+            </div>
+        </section>
+
+        <section id="step11" class="screen">
+            <div class="finale-wrapper">
+                <h1 class="static-neon-text">Forever Yours ❤️</h1>
+                <div class="promise-wall">
+                    <div class="scrolling-promises">
+                        <p>I promise to stay, no matter what. 🤝</p>
+                        <p>2026 humara hoga, ye waada hai. ✨</p>
+                        <p>Main hamesha tujhe nazar se bachunga. 🧿</p>
+                        <p>Tera har birthday aise hi special banunga. 🎂</p>
+                        <p>Happy Birthday Meri Shraddha! ❤️‍🩹</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
